@@ -1,0 +1,46 @@
+body .is-info-notice {
+  background-color: var(--color-notice-info, '#cce5ff');
+  border: none;
+}
+body .is-success-notice {
+  background-color: var(--color-notice-success, '#d4edda');
+  border: none;
+}
+body .is-warning-notice {
+  background-color: var(--color-notice-warning, '#fff3cd');
+  border: none;
+}
+body .is-error-notice {
+  background-color: var(--color-notice-error, '#f8d7da');
+  border: none;
+}
+
+[style*="--color-notice-warning-is-dark:true"] .is-warning-notice,
+[style*="--color-notice-success-is-dark:true"] .is-success-notice,
+[style*="--color-notice-error-is-dark:true"] .is-error-notice,
+[style*="--color-notice-info-is-dark:true"] .is-info-notice,
+[style*="--color-notice-warning-is-light:false"] .is-warning-notice,
+[style*="--color-notice-success-is-light:false"] .is-success-notice,
+[style*="--color-notice-error-is-light:false"] .is-error-notice,
+[style*="--color-notice-info-is-light:false"] .is-info-notice {
+  color: var(--color-text-light);
+  --color-text: var(--color-text-light);
+  --color-text-minor-shade: var(--color-text-light-minor-shade);
+  --color-text-major-shade: var(--color-text-light-major-shade);
+  --color-text-half-shade: var(--color-text-light-half-shade);
+}
+
+[style*="--color-notice-warning-is-dark:false"] .is-warning-notice,
+[style*="--color-notice-success-is-dark:false"] .is-success-notice,
+[style*="--color-notice-error-is-dark:false"] .is-error-notice,
+[style*="--color-notice-info-is-dark:false"] .is-info-notice,
+[style*="--color-notice-warning-is-light:true"] .is-warning-notice,
+[style*="--color-notice-success-is-light:true"] .is-success-notice,
+[style*="--color-notice-error-is-light:true"] .is-error-notice,
+[style*="--color-notice-info-is-light:true"] .is-info-notice {
+  color: var(--color-text-dark);
+  --color-text: var(--color-text-dark);
+  --color-text-minor-shade: var(--color-text-dark-minor-shade);
+  --color-text-major-shade: var(--color-text-dark-major-shade);
+  --color-text-half-shade: var(--color-text-dark-half-shade);
+}

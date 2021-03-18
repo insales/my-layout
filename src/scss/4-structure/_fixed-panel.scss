@@ -1,0 +1,23 @@
+body {
+  padding-top: var(--fixed-panels-top-offset);  
+  padding-bottom: var(--fixed-panels-bottom-offset);
+}
+
+[data-fixed-panels] {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: var(--zindex-fixed);
+}
+
+[data-fixed-panels="top"] {
+  top: 0;
+}
+
+[data-fixed-panels="bottom"] {
+  bottom: 0;
+}
+
+[data-fixed-panels].is-no-layouts {
+  position: relative;
+}

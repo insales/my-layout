@@ -1,0 +1,82 @@
+.layout {
+  padding-left: var(--layout-side-padding);
+  padding-right: var(--layout-side-padding);
+  margin-top: var(--layout-mt);
+  margin-bottom: var(--layout-mb);
+
+  @media screen and (max-width: 767px) {
+    --layout-side-padding: var(--layout-side-padding-mobile);
+  }
+
+  &[style*="--bg:"] {
+    background: transparent;
+
+    .layout__content {
+      padding-left: var(--layout-side-padding);
+      padding-right: var(--layout-side-padding);
+    }
+
+    &[style*="--layout-wide-bg:true"] {
+      background: var(--bg);
+      padding-left: var(--layout-side-padding);
+      padding-right: var(--layout-side-padding);
+
+      .layout__content {
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    &[style*="--layout-edge:true"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &[style*="--layout-edge:true"] {
+    padding-left: 0;
+    padding-right: 0;
+
+    .layout__content{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &[style*="--layout-wide-content:true"] .layout__content {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-top: calc(var(--layout-mt) * var(--layout-adaptive-vertical-indents-factor-decrease));
+    margin-bottom: calc(var(--layout-mb) * var(--layout-adaptive-vertical-indents-factor-decrease));
+  } 
+
+  .layout__content{
+    @media screen and (max-width: 767px) {
+      padding-top: calc(var(--layout-pt) * var(--layout-adaptive-vertical-indents-factor-decrease));
+      padding-bottom: calc(var(--layout-pb) * var(--layout-adaptive-vertical-indents-factor-decrease));
+    }
+  }
+
+  &[style*="--hide-mobile:true"] {
+    @media screen and (max-width: 767px) {
+      display: none!important;
+    }  
+  }
+
+  &[style*="--hide-desktop:true"] {
+    @media screen and (min-width: 768px){
+      display: none!important;
+    }  
+  }
+
+  &__content {
+    max-width: var(--layout-content-max-width);
+    margin: 0 auto;
+    padding-top: var(--layout-pt);
+    padding-bottom: var(--layout-pb);
+    background: var(--bg);
+  }
+}

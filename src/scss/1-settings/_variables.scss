@@ -1,0 +1,133 @@
+:root{
+  /***** COLORS *****/
+  --color-text-light: #fff;
+  --color-text-dark: #111;
+  --color-text-light-minor-shade: #f7f7f7;
+  --color-text-light-major-shade: #ededed;
+  --color-text-light-half-shade: #808080;
+  --color-text-dark-minor-shade: #474747;
+  --color-text-dark-major-shade: #5c5c5c;
+  --color-text-dark-half-shade: #999999;
+  /**/
+  --color-border-block: #ccc;
+  --color-hr: #ccc;
+  /**/
+  --color-btn-bg: #6360e0;
+  --color-btn-bg-minor-shade: #7270e3;
+  --color-btn-bg-major-shade: #8180e6;
+  --color-btn-bg-half-shade: #b0afef;
+  --color-btn-color: #fff;
+  --color-btn-border-color: var(--color-btn-bg);
+  --color-btn-shadow: none;
+  --color-btn-bg-hover: var(--color-btn-bg-minor-shade);
+  --color-btn-color-hover: #fff;
+  --color-btn-border-color-hover: var(--color-btn-bg-hover);
+  --color-btn-shadow-hover: var(--color-btn-shadow, none);
+  --color-btn-bg-disabled: #999;
+  --color-btn-color-disabled: #fff;
+  /**/
+  --color-accent-text: var(--color-btn-bg);
+  --color-accent-text-minor-shade: var(--color-btn-bg-minor-shade);
+  --color-accent-text-major-shade: var(--color-btn-bg-major-shade);
+  --color-accent-text-half-shade: var(--color-btn-bg-half-shade);
+  /**/
+  --color-btn-second-bg: #fff;
+  --color-btn-second-color: #6360e0;
+  --color-btn-second-border-color: #6360e0;
+  --color-btn-second-shadow: none;
+  --color-btn-second-bg-hover: #fff;
+  --color-btn-second-color-hover: hsl(241,67%,53%);
+  --color-btn-second-border-color-hover: hsl(241,67%,53%);
+  --color-btn-second-shadow-hover: var(--color-btn-second-shadow, none);
+  --color-btn-second-bg-disabled: #fff;
+  --color-btn-second-color-disabled: #999;
+  /**/
+  --color-form-controls-bg: #fff;
+  --color-form-controls-color: var(--color-text);
+  --color-form-controls-border-color: var(--color-text-half-shade);
+  --color-form-controls-shadow: none;
+  --color-form-controls-placeholder: #ddd;
+  --color-form-controls-border-color-focus: #ccc;
+  --color-form-controls-shadow-focus: 0 0 0 0.2rem rgba(0,0,0,.05);
+  --color-form-controls-bg-disabled: #f4f4f4;
+  /**/
+  --color-error: #ff0000;
+  --color-success: #00b200;
+
+
+  /***** SIZES *****/
+  --layout-content-max-width: 1200px;
+  --layout-side-padding: 40px;
+  --layout-side-padding-mobile: 15px;
+  --layout-adaptive-vertical-indents-factor-decrease: 4;
+
+  /***** page *****/
+  --layout-cell-count: 36;
+  --layout-cell-main: 38;
+  --layout-cell-width: calc(var(--layout-content-max-width) / var(--layout-cell-count));
+  --layout-delta: var(--delta_sidebar, 2);
+  --initial-sidebar-start: 2;
+  --initial-sidebar-end: calc(var(--theme-sidebar-end, 9) + var(--layout-delta));
+  --initial-main-start: var(--initial-sidebar-end, 7);
+  --initial-main-end: var(--theme-main-end, var(--layout-cell-main));
+  --fixed-sidebar-color: var(--theme-fixed-sidebar-color, '#fff');
+  --initial-fixed-sidebar-end: calc(var(--theme-sidebar-fixed-end, 3) + var(--layout-delta));
+  --initial-fixed-main-end: calc(var(--theme-sidebar-fixed-end, 3) + var(--layout-delta));
+
+  /* Controls - Кнопки, элементы формы - input, textarea, select.
+  Специфичные настройки для кнопок - controls-btn-*, для элементов формы - --controls-form-*
+  */
+  --controls-height-s: 30px;
+  --controls-height-m: 40px;
+  --controls-height-l: 50px;
+  --controls-height-xl: 60px;
+  /**/
+  --controls-btn-padding-x: 1em;
+  --controls-btn-padding-y: 0;
+  --controls-btn-border-radius: 0;
+  --controls-form-padding-x: 10px;
+  --controls-form-padding-y: calc(1em * 0.4);
+  --controls-form-border-radius: var(--controls-btn-border-radius, 0);
+  /**/
+  --controls-font-size-s: calc(var(--font-size) * 0.75);
+  --controls-font-size-m: var(--font-size);
+  --controls-font-size-l: calc(var(--font-size) * 1.25);
+  --controls-font-size-xl: calc(var(--font-size) * 1.5);
+  /**/
+  --controls-border-width: 1px;
+
+
+  /***** TEXT *****/
+  --font-family-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --font-family: var(--font-family-default);
+  --font-family-heading: var(--font-family);
+  --font-size: 16px;
+  --font-weight: 400;
+  --line-height: 1.5;
+  --cursor-disabled: not-allowed;
+
+
+  /***** Z-INDEX *****/
+  --zindex-dropdown: 1000;
+  --zindex-sticky: 1010;
+  --zindex-fixed: 1020;
+  --zindex-overlay: 1030;
+  --zindex-modal: 1040;
+  --zindex-tooltip: 1050;
+
+
+  /***** TRANSITIONS *****/
+  --btn-transition: color .15s ease-in-out, background .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  --input-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+
+  /***** FIXED PANELS *****/
+  --fixed-panels-top-offset: 0;
+  --fixed-panels-bottom-offset: 0;
+
+
+  /***** COMPONENT GRID-LIST *****/
+  --grid-list-min-width: 300px;
+  --grid-list-row-gap: 3rem;
+  --grid-list-column-gap: 3rem;
+}

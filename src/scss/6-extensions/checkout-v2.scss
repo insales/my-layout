@@ -1,0 +1,183 @@
+/* Кнопки, ссылки, чекбоксы ... */
+  .co-button:not(.co-button--link),
+  .picker-button,
+  .m-modal-button {
+    @extend .button;
+  }
+  .co-input-description a:not([class]),
+  .co-menu-link,
+  .co-link,
+  .link,
+  a {
+    @extend a;
+
+    &:focus {
+      color: var(--color-btn-bg);
+    }
+  }
+
+  .co-table a {
+    color: var(--color-accent-text)!important;
+  }
+
+
+  .co-tabs-content .radio > span,
+  .co-input--radio > span,
+  .co-toggable_field-input--checkbox > span,
+  .co-toggable_field-input--radio > span {
+    color: var(--color-btn-bg);
+  }
+
+
+  .co-form-controls a,
+  .co-button--password_recover {
+    @extend .button-link;
+    text-decoration: none;
+
+    &:focus {
+      color: var(--color-btn-bg);
+    }
+  }
+
+  .co-tabs-controls--customer {
+    .co-tabs-node {
+      @extend .button;
+      @extend .button_size-s;
+      border-radius: 0;
+    }
+    .co-tabs-node:first-child {
+      border-top-left-radius: var(--controls-form-border-radius);
+      border-bottom-left-radius: var(--controls-form-border-radius);
+    }
+    .co-tabs-node:last-child {
+      border-top-right-radius: var(--controls-form-border-radius);
+      border-bottom-right-radius: var(--controls-form-border-radius);
+    }
+
+    .co-tabs-node:not(.co-tabs-node--active) {
+      background: var(--color-btn-bg-minor-shade);
+    }
+  }
+  .co-order-state {
+    border-radius: var(--controls-form-border-radius);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--controls-height-m);
+    padding: var(--controls-btn-padding-y) var(--controls-btn-padding-x);
+  }
+
+/* Текстовые поля */
+.co-input-field,
+.m-input-field {
+  @extend .form-control;
+}
+
+.tt-dropdown-menu {
+  color: var(--color-form-controls-color);
+  background: var(--color-form-controls-bg);
+}
+
+.co-input--house {
+    margin-right: 1rem;
+}
+
+div.co-input-select {
+  background: transparent;
+}
+
+div.co-input-select:after {
+  content: '▼';
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  opacity: 0.8;
+  pointer-events: none;
+  color: var(--color-text-half-shade);
+}
+
+.m-modal, .co-modal:not(.co-modal--pick_up_modal) {
+  background: var(--bg);
+}
+
+.co-pick_up-desktop-list_filter {
+  height: auto;
+  line-height: normal;
+}
+
+.co-pick_up-item, .co-modal--pick_up_modal {
+  color: #000000;
+}
+
+.m-input--checkbox {
+  position: relative;
+  opacity: 1;
+}
+.m-input--checkbox input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  top: 5px;
+}
+.m-input--checkbox [type="checkbox"] + span {
+  color: var(--color-btn-bg);
+  flex-basis: 1rem;
+  z-index: 1;
+  pointer-events: none;
+  line-height: 1.7rem;
+  background-color: transparent;
+  position: relative;
+  width: 1.5rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  border: var(--controls-border-width) solid var(--color-form-controls-border-color);
+  border-radius: calc(var(--controls-form-border-radius) / 2);
+  top: 5px;
+}
+.m-input--checkbox [type="checkbox"]:checked + span:after {
+  content: "✔";
+  left: 50%;
+  top: 50%;
+  font-size: 1.3rem;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.m-modal-close {
+  background: none;
+  outline: none;
+}
+.m-modal-close:after {
+    content: "×";
+    font-size: 3rem;
+    line-height: 2rem;
+    color: var(--color-text);
+}
+
+.co-button--checkout#create_order {
+  width: 100%;
+  margin: 1rem 0;
+  height: var(--controls-height-l);
+}
+.co-bonus_points-maximum_points {
+  color: var(--color-text);
+}
+@media screen and (max-width: 767px){
+  .co-login {
+    flex: 0 1 auto;
+  }
+}
+
+.m-modal#insales-quick-checkout-dialog {
+  max-height: 100vh;
+
+  @media (min-width: 601px){
+    max-height: calc(100vh - 60px);
+  }
+}

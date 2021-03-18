@@ -1,0 +1,16 @@
+.grid-list{
+  display: grid;
+  grid-template-columns: #{"repeat(auto-fill, minmax(min(var(--grid-list-min-width), 100%), 1fr))"};
+  grid-template-rows: auto;
+  grid-row-gap: var(--grid-list-row-gap);
+  grid-column-gap: var(--grid-list-column-gap);
+  align-items: self-start;
+
+  &.grid-list_items-stretch{
+  	align-items: stretch;
+  }
+
+  &.grid-list_wide{
+  	grid-template-columns: #{"repeat(auto-fit, minmax(min(var(--grid-list-min-width), 100%), 1fr))"};
+  }
+}

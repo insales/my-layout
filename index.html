@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="dist/css/core-css.css" rel="stylesheet" type="text/css">
+    <link href="dist/css/core-css-extensions.css" rel="stylesheet" type="text/css">
+  </head>
+  <body style="--bg:#ffffff;">
+  	<style>
+			/* TEST PANEL */
+			.test-settings{
+				position: fixed;
+				top: 0;
+				left: 0;
+				bottom: 0;
+        width: 250px;
+				z-index: 100;
+				background-color: rgba(0,0,0, 0.8);
+				color: #fff;
+				padding: 15px;
+				overflow-y: auto;
+        transform: translate(-100%, 0);
+        opacity: 0;
+        transition: .5s; 
+			}
+
+      .test-settings.is-show{
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+
+      .test-settings__col{margin-bottom: 20px;}
+      input[type="range"]{width: 100%;}
+			.editor{position: relative;}
+
+			.editor__field{
+				position: absolute;
+				right: 0;
+				top: 0;
+        padding: 5px 10px;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+        z-index: 10;
+        display: none;
+			}
+
+			.editor:hover{outline: 1px dashed red;}
+      .editor:hover .editor__field{display: block;}
+  	</style>
+
+    <div class="test-settings" id="test-settings">
+      <div class="test-settings__col">
+        <div>
+          Цвет фона:
+          <input 
+            type="color"
+            value="#FFFFFF"
+            class="js-setting-css-variable"
+            data-event-name="input"
+            data-setting-name="--bg"
+          />
+        </div>
+      </div>
+      <div class="test-settings__col">
+        <div>
+          Внешний отступ сверху:
+          <input 
+            type="range"
+            min="0"
+            max="5" 
+            step="1"
+            class="js-setting-css-variable"
+            data-event-name="input"
+            data-setting-name="--layout-mt"
+            data-setting-unit="vw"
+          />
+        </div>
+        <div>
+          Внешний отступ снизу:
+          <input 
+            type="range" 
+            min="0" 
+            max="5"
+            step="1"
+            class="js-setting-css-variable"
+            data-event-name="input"
+            data-setting-name="--layout-mb"
+            data-setting-unit="vw"
+          />
+        </div>
+      </div>
+      <div class="test-settings__col">
+        <div>
+          Внутренний отступ сверху:
+          <input 
+            type="range" 
+            min="0" 
+            max="5" 
+            step="1" 
+            class="js-setting-css-variable" 
+            data-event-name="input" 
+            data-setting-name="--layout-pt"
+            data-setting-unit="vw"
+          />
+        </div>
+        <div>
+          Внутренний отступ снизу:
+          <input 
+            type="range" 
+            min="0" 
+            max="5" 
+            step="1" 
+            class="js-setting-css-variable" 
+            data-event-name="input" 
+            data-setting-name="--layout-pb"
+            data-setting-unit="vw"
+          />
+        </div>
+      </div>
+      <div class="test-settings__col">
+        <div>
+          <label>
+            <input 
+              type="checkbox" 
+              value=""
+              class="js-setting-css-variable"
+              data-event-name="change" 
+              data-is-toggle
+	            data-setting-name="--layout-wide-content"
+	            data-setting-value="true"
+            />
+            Растянуть контент
+          </label>
+        </div>
+        <div>
+          <label>
+            <input 
+              type="checkbox" 
+              value=""
+              class="js-setting-css-variable"
+              data-event-name="change" 
+              data-is-toggle
+	            data-setting-name="--layout-wide-bg"
+	            data-setting-value="true"
+            />
+            Растянуть фон
+          </label>
+        </div>
+        <div>
+          <label>
+            <input 
+              type="checkbox" 
+              value=""
+              class="js-setting-css-variable"
+              data-event-name="change" 
+              data-setting-name="--layout-edge"
+              data-setting-value="true"
+              data-is-toggle
+            />
+            Убрать отсутпы по краям
+          </label>
+        </div>
+        <!-- пример с data атрибутами
+        <div>
+          <label>
+            <input 
+              type="checkbox" 
+              value=""
+              class="js-setting-data-attr"
+              data-event-name="change" 
+              data-attr-name="data-layout-edge"
+              data-is-toggle
+            />
+            Убрать отсутпы по краям
+          </label>
+        </div>
+      	-->
+      </div>
+      <div class="test-settings__col">
+        <div>
+          Максимальная ширина контента:
+          <input 
+            type="range" 
+            min="300" 
+            max="2000" 
+            step="10" 
+            class="js-setting-css-variable" 
+            data-event-name="input" 
+            data-setting-name="--layout-content-max-width"
+            data-setting-unit="px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <section class="editor">
+      <label class="editor__field">
+        <input type="radio" class="js-edit-layout" name="edit-layout" value="layout_1" />
+        Редактировать
+      </label>
+      <section class="layout" id="layout_1" style="--bg:#f4f4f4; --layout-wide-bg:true; --layout-pt:2vw; --layout-pb:2vw; --layout-adaptive-vertical-indents-factor-decrease: 2;">
+        <div class="layout__content">
+        	<style>
+        		.product-list{background: transparent;}
+        		.product-item{background: var(--bg); display: grid;grid-row-gap: 5px; padding: 10px;}
+        		.product-item__title{margin-bottom: 0.5rem;}
+        		.product-item__price-cur{font-weight: bold; font-size: 1.2rem;}
+        		.product-item__price-old{color: var(--color-text-half); font-size: 0.8rem; text-decoration: line-through;}
+        		.product-item__text{color: var(--color-text-part); font-size: 0.9rem;}
+        	</style>
+          <h2 style="--font-size: 50px;--adaptive-font-size-factor-increase:2;">New products</h2>
+          <div class="grid-list product-list" style="--bg:#000000; --grid-list-min-width: 250px; --grid-list-row-gap: 3rem; --grid-list-column-gap: 2rem; --img-ratio:16/9">
+          	<div class="product-item">
+          		<div class="product-item__photo">
+                <div class="img-ratio img-ratio_cover">
+                  <div class="img-ratio__inner">
+                    <img src="media/photo-1.jpg" alt="" />
+                  </div>
+                </div>
+              </div>
+          		<h4 class="product-item__title">Exercitation dolore id nostrud occaecat</h4>
+          		<div class="product-item__price">
+          			<span class="product-item__price-cur">5000 руб.</span>
+          			<span class="product-item__price-old">5500 руб.</span>
+          		</div>
+          		<div class="product-item__text">Exercitation dolore id nostrud occaecat Lorem minim sint pariatur consectetur duis in. Consectetur anim proident pariatur deserunt excepteur deserunt commodo do excepteur labore</div>
+          		<div class="product-item__controls">
+          			<button type="button" class="button button_wide">Buy</button>
+          		</div>
+          	</div>
+          	<div class="product-item">
+          		<div class="product-item__photo">
+                <div class="img-ratio img-ratio_cover" >
+                  <div class="img-ratio__inner">
+                    <img src="media/photo-2.jpg" alt="" />
+                  </div>
+                </div>  
+              </div>
+          		<h4 class="product-item__title">Exercitation dolore id nostrud occaecat</h4>
+          		<div class="product-item__price">
+          			<span class="product-item__price-cur">5000 руб.</span>
+          			<span class="product-item__price-old">5500 руб.</span>
+          		</div>
+          		<div class="product-item__text">Exercitation dolore id nostrud occaecat Lorem minim sint pariatur consectetur duis in. Consectetur anim proident pariatur deserunt excepteur deserunt commodo do excepteur labore</div>
+          		<div class="product-item__controls">
+          			<button type="button" class="button button_wide">Buy</button>
+          		</div>
+          	</div>
+          	<div class="product-item" style="--bg:#dddddd;">
+          		<div class="product-item__photo">
+                <div class="img-ratio img-ratio_cover" >
+                  <div class="img-ratio__inner">
+                    <img src="media/photo-3.jpg" alt="" />
+                  </div>
+                </div>   
+              </div>
+          		<h4 class="product-item__title">Exercitation dolore id nostrud occaecat</h4>
+          		<div class="product-item__price">
+          			<span class="product-item__price-cur">5000 руб.</span>
+          			<span class="product-item__price-old">5500 руб.</span>
+          		</div>
+          		<div class="product-item__text">Exercitation dolore id nostrud occaecat Lorem minim sint pariatur consectetur duis in. Consectetur anim proident pariatur deserunt excepteur deserunt commodo do excepteur labore</div>
+          		<div class="product-item__controls">
+          			<button type="button" class="button button_wide">Buy</button>
+          		</div>
+          	</div>
+          	<div class="product-item">
+          		<div class="product-item__photo">
+                <div class="img-ratio img-ratio_cover" >
+                  <div class="img-ratio__inner">
+                    <img src="media/photo-1.jpg" alt="" />
+                  </div>
+                </div>   
+              </div>
+          		<h4 class="product-item__title">Exercitation dolore id nostrud occaecat</h4>
+          		<div class="product-item__price">
+          			<span class="product-item__price-cur">5000 руб.</span>
+          			<span class="product-item__price-old">5500 руб.</span>
+          		</div>
+          		<div class="product-item__text">Exercitation dolore id nostrud occaecat Lorem minim sint pariatur consectetur duis in. Consectetur anim proident pariatur deserunt excepteur deserunt commodo do excepteur labore</div>
+          		<div class="product-item__controls">
+          			<button type="button" class="button button_wide">Buy</button>
+          		</div>
+          	</div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="editor">
+      <label class="editor__field">
+        <input type="radio" class="js-edit-layout" name="edit-layout" value="layout_2" />
+        Редактировать
+      </label>
+      <section class="layout" id="layout_2" style="--layout-mt:2vw; --layout-mb:2vw; --bg:linear-gradient(to right, #6d10a8 0%,#4b0db9 100%); --bg:#6d10a8;" >
+        <div class="layout__content">	
+          <style>
+        		.blog-item{display: grid; grid-row-gap: 5px;}
+        		.blog-item__date, .blog-item__text{color: var(--color-text-half);}
+        		.blog-item__info{color: var(--color-text-part);}
+        		.blog-item__photo{background-color:#ccc; padding-top:60%;}
+        	</style>
+        	<h2>Last news</h2>
+          <div class="grid-list blog-list">
+        		<div class="blog-item">
+        			<div class="blog-item__date">20.08.2020г.</div>
+        			<div class="blog-item__photo"></div>
+        			<h3 class="blog-item__title">Exercitation dolore id nostrud occaecat</h3>
+        			<div class="blog-item__text">Exercitation dolore id nostrud occaecat Lorem minim sint pariatur consectetur duis in. Consectetur anim proident pariatur deserunt excepteur deserunt commodo do excepteur labore laborum</div>
+        			<div class="blog-item__info">Lesha Ananyev</div>
+        			<div class="blog-item__controls">
+        				<a href="#" class="button button_size-l">
+                  <img class="button__img-icon" src="media/icon-plus.png" alt="" />
+                  More
+                </a>
+        			</div>
+        		</div>
+        		<div class="blog-item">
+        			<div class="blog-item__date">20.08.2020г.</div>
+              <div class="blog-item__photo"></div>
+        			<h3 class="blog-item__title">Exercitation dolore id nostrud occaecat</h3>
+        			<div class="blog-item__text">Exercitation dolore id nostrud occaecat Lorem minim sint pariatur consectetur duis in. Consectetur anim proident pariatur deserunt excepteur deserunt commodo do excepteur labore laborum</div>
+        			<div class="blog-item__info">Lesha Ananyev</div>
+        			<div class="blog-item__controls">
+        				<a href="#" class="button button_size-l">
+                  <img class="button__img-icon" src="media/icon-plus.png" alt="" />
+                  More
+                </a>
+        			</div>
+        		</div>
+        		<div class="blog-item">
+        			<div class="blog-item__date">20.08.2020г.</div>
+        			<div class="blog-item__photo"></div>
+        			<h3 class="blog-item__title">Exercitation dolore id nostrud occaecat</h3>
+        			<div class="blog-item__text">Exercitation dolore id nostrud occaecat Lorem minim sint pariatur consectetur duis in. Consectetur anim proident pariatur deserunt excepteur deserunt commodo do excepteur labore laborum</div>
+        			<div class="blog-item__info">Lesha Ananyev</div>
+        			<div class="blog-item__controls">
+        				<a href="#" class="button button_size-l">
+                  <img class="button__img-icon" src="media/icon-plus.png" alt="" />
+                  More
+                </a>
+        			</div>
+        		</div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="editor">
+      <label class="editor__field">
+        <input type="radio" class="js-edit-layout" name="edit-layout" value="layout_3" />
+        Редактировать
+      </label>
+      <section class="layout" id="layout_3" style="--layout-pt:2vw; --layout-pb:2vw; --layout-mt:2vw; --layout-mb:2vw;">
+        <div class="layout__content"> 
+          <style>
+            .blog-list_view-2 .blog-item{padding: 1rem; border-radius: 5px; border: 1px solid var(--color-border-block);}
+            .blog-item{display: grid; grid-row-gap: 5px;}
+            .blog-item__date, .blog-item__text{color: var(--color-text-half);}
+            .blog-item__info{color: var(--color-text-part);}
+            .blog-item__photo{background-color:#ccc; padding-top:60%;}
+
+            @media screen and (max-width: 640px) {
+              .blog-list_view-2{
+                --grid-list-min-width: 280px!important;
+              }
+            }
+          </style>
+          <h2>Last news 2</h2>
+          <div class="grid-list blog-list blog-list_view-2" style="--grid-list-min-width:500px;">
+            <div class="blog-item">
+              <div class="blog-item__date">20.08.2020г.</div>
+              <div class="blog-item__photo"></div>
+              <h3 class="blog-item__title">Exercitation dolore id nostrud occaecat</h3>
+              <div class="blog-item__text">Exercitation dolore id nostrud occaecat Lorem minim sint pariatur consectetur duis in. Consectetur anim proident pariatur deserunt excepteur deserunt commodo do excepteur labore laborum</div>
+              <div class="blog-item__info">Lesha Ananyev</div>
+              <div class="blog-item__controls">
+                <a href="#" class="button button_size-xl">More</a>
+              </div>
+            </div>
+            <div class="blog-item">
+              <div class="blog-item__date">20.08.2020г.</div>
+              <div class="blog-item__photo"></div>
+              <h3 class="blog-item__title">Exercitation dolore id nostrud occaecat</h3>
+              <div class="blog-item__text">Exercitation dolore id nostrud occaecat Lorem minim sint pariatur consectetur duis in. Consectetur anim proident pariatur deserunt excepteur deserunt commodo do excepteur labore laborum</div>
+              <div class="blog-item__info">Lesha Ananyev</div>
+              <div class="blog-item__controls">
+                <a href="#" class="button button_size-xl">More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="editor">
+      <label class="editor__field">
+        <input type="radio" class="js-edit-layout" name="edit-layout" value="layout_4" />
+        Редактировать
+      </label>
+      <section class="layout" id="layout_4" style="--bg:#6360e0; --layout-ege:true; --layout-mt:2vw; --layout-mb:2vw;">
+        <div class="layout__content">
+        	<style>
+        		.service-form{display: grid; grid-template-columns: 40% 1fr;}
+        		.service-form .form-control{width: 100%;}
+        		.service-form__info, .service-form__data{padding: 2rem;}
+            .service-form__promocode{display: flex;}
+        		.service-form__submit-btn{min-width: 100px; --color-btn-shadow: 0 0 15px rgba(0,0,0, 0.3); --color-btn-shadow-hover: 0 0 15px rgba(0,0,0, 0.5);}
+
+            @media screen and (max-width: 767px) {
+              .service-form{display: block;}
+
+              [style*="--layout-ege"] .service-form__info, [style*="--layout-ege"] .service-form__data{
+                padding-left: var(--layout-side-padding);
+                padding-right: var(--layout-side-padding);
+              }
+            }
+        	</style>
+          <div class="service-form">
+          	<div class="service-form__info">
+          		<h3>Таргетолог</h3>
+          		<div class="service-form__info-item">
+          			<div>Продолжительность</div>
+          			<h5 class="service-form__info-value">4 месяца</h5>
+          		</div>
+          		<div class="service-form__info-item">
+          			<div>Начало обучения</div>
+          			<h5 class="service-form__info-value">7 июля</h5>
+          		</div>
+          		<div class="service-form__info-item">
+          			<div>Стоимость</div>
+          			<h5 class="service-form__info-value">
+          				6000 руб
+          			</h5>
+          		</div>
+          	</div>
+          	<div class="service-form__data" style="--bg:#dddddd;">
+          		<h3>Осталось 5 мест</h3>
+          		<form>
+          			<div class="form-field">
+          				<div>Ваше имя</div>
+          				<input type="text" class="form-control form-control_border-round" />
+                  <div class="form-message form-message_error">Введите ФИО полностью</div>
+          			</div>
+          			<div class="form-field">
+          				<div>Ваш телефон</div>
+          				<input type="text" class="form-control" placeholder="+7(999)999-99-99" />
+          			</div>
+          			<div class="form-field">
+          				<div>Страна</div>
+          				<select class="form-control">
+          					<option>Россия</option>
+          					<option>Германия</option>
+          					<option>Франция</option>
+          				</select>
+          			</div>
+                <div class="form-field">
+                  <div>Адрес</div>
+                  <input type="text" class="form-control" disabled />
+                </div>
+          			<div class="form-field">
+          				<div>Пол</div>
+          				<label>
+          					<input type="radio" name="gender" checked="checked" value="0" />
+          					Муж.
+          				</label>
+          				<label>
+          					<input type="radio" name="gender" value="1" />
+          					Жен.
+          				</label>
+          			</div>
+          			<div class="form-field">
+          				<div>Комментарий</div>
+          				<textarea class="form-control"></textarea>
+          			</div>
+                <div class="form-field">
+                  <div>Промо код</div>
+                  <div class="service-form__promocode">
+                    <button type="button" class="button button_size-l" disabled>Применить</button>
+                    <input type="text" class="form-control form-control_size-l" value="123" />
+                  </div>
+                  <div class="form-message form-message_success">Промокод активирован</div>
+                </div>
+          			<div class="form-field">
+          				<label>
+          					<input type="checkbox" value="1" />
+          					Согласен на обработку персональных данных
+          				</label>
+          			</div>
+          			<div class="form-field">
+          				<button type="submit" class="button button_size-xl button_border-round service-form__submit-btn">Отправить</button>
+          				<button type="reset" class="button button_second button_border-round button_size-xl service-form__submit-btn" disabled>Отмена</button>
+                  <button type="button" class="button button_size-xl button_only-icon">
+                    <img class="button__img-icon" src="media/icon-plus.png" alt="" />
+                  </button>
+                </div>
+          		</form>
+          	</div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <script src="dist/js/my-layout.js" charset="utf-8"></script>
+    <script src="dist/js/test-layout.js" charset="utf-8"></script>
+  </body>
+</html>

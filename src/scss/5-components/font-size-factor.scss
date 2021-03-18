@@ -1,0 +1,12 @@
+[style*="--font-size"]{
+  font-size: var(--font-size);
+
+  &[style*="--adaptive-font-size-factor-increase"]{
+
+    @media screen and (max-width: 767px){
+      font-size: calc(var(--font-size) / var(--adaptive-font-size-factor-increase));
+    }
+  }
+}
+
+

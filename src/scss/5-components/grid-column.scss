@@ -1,0 +1,8 @@
+.grid-column {
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 1fr);
+  grid-template-rows: auto;
+  grid-row-gap: var(--grid-column-row-gap);
+  grid-column-gap: var(--grid-column-column-gap);
+  align-items: self-start;
+}
