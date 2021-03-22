@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .h4, .h5, .h6, .heading {
   margin-top: 0;
   margin-bottom: 1rem;
   font-family: var(--font-family-heading);
@@ -49,4 +49,12 @@ h5, .h5 {
 
 h6, .h6 {
 	font-size: var(--font-size);
+}
+
+.heading {
+  font-size: calc(var(--font-size) * var(--heading-ratio, 2));
+
+	@media screen and (max-width: 767px) {
+    font-size: calc( calc(var(--font-size) * var(--heading-ratio, 2)) * 0.75);
+  }
 }

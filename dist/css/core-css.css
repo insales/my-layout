@@ -628,7 +628,7 @@ template {
 }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .h4, .h5, .h6, .heading {
   margin-top: 0;
   margin-bottom: 1rem;
   font-family: var(--font-family-heading);
@@ -688,6 +688,16 @@ h5, .h5 {
 
 h6, .h6 {
   font-size: var(--font-size);
+}
+
+.heading {
+  font-size: calc(var(--font-size) * var(--heading-ratio, 2));
+}
+
+@media screen and (max-width: 767px) {
+  .heading {
+    font-size: calc( calc(var(--font-size) * var(--heading-ratio, 2)) * 0.75);
+  }
 }
 
 a {
@@ -1096,7 +1106,7 @@ html.is-overflow body {
   grid-column-gap: 0;
   grid-row-gap: 0;
   grid-template-columns: minmax(var(--layout-side-padding), 1fr) repeat(var(--layout-cell-count), minmax(0, var(--layout-cell-width))) minmax(var(--layout-side-padding), 1fr);
-  grid-template-areas: "header header" "sidebar main" "footer footer";
+  grid-template-areas: "header header" "sidebar main" "footer footer";
   grid-template-rows: minmax(auto, max-content) auto minmax(auto, max-content);
   /*
   &_fixed {
@@ -1205,7 +1215,7 @@ html.is-overflow body {
 
 @media (max-width: 767px) {
   .page_layout {
-    grid-template-areas: "header" "sidebar" "main" "footer";
+    grid-template-areas: "header" "sidebar" "main" "footer";
     grid-template-columns: 100%;
     grid-template-rows: max-content;
   }
@@ -1253,13 +1263,13 @@ html.is-overflow body {
 }
 
 .page_layout_section_top {
-  grid-template-areas: "header header header header" "section-top section-top section-top section-top" ". sidebar main ." "footer footer footer footer";
+  grid-template-areas: "header header header header" "section-top section-top section-top section-top" ". sidebar main ." "footer footer footer footer";
   grid-template-rows: minmax(auto, max-content) minmax(auto, max-content) auto minmax(auto, max-content);
 }
 
 @media (max-width: 767px) {
   .page_layout_section_top {
-    grid-template-areas: "header" "section-top" "sidebar" "main" "footer";
+    grid-template-areas: "header" "section-top" "sidebar" "main" "footer";
     grid-template-columns: 100%;
     grid-template-rows: max-content;
   }
