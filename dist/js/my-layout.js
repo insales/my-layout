@@ -1,4 +1,9 @@
 window.addEventListener("load", (event) => {
+  let setWindowHeightVariable = () => {
+    let vh = window.innerHeight;
+    document.querySelector('html').style.setProperty('--vh', `${vh}px`);
+  }
+  
   let setFixedPanelOffsetVariable = (panelPosition, value) => {
     let css_variable = '';
 
@@ -36,6 +41,9 @@ window.addEventListener("load", (event) => {
       aside_area.classList.remove('is-large');
     }
   }
+
+  setWindowHeightVariable();
+  window.addEventListener('resize', setWindowHeightVariable);
 
   const fixed_panels = document.querySelectorAll('[data-fixed-panels]');
   const sidebar = document.querySelector('[data-sidebar]');

@@ -9,7 +9,7 @@ html {
 }
 
 .page_layout {
-  min-height: 100vh;
+  min-height: calc(var(--vh, 100vh) - var(--fixed-panels-top-offset) - var(--fixed-panels-bottom-offset));
   display: grid;
   grid-column-gap: 0;
   grid-row-gap: 0;
