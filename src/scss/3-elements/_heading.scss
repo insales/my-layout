@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1 {
 	font-size: calc(var(--font-size) * 2.5);
 
-	@media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     font-size: calc(var(--font-size) * 2);
   }
 }
@@ -53,8 +53,8 @@ h6, .h6 {
 
 .heading {
   font-size: calc(var(--font-size) * var(--heading-ratio, 2));
-
-	@media screen and (max-width: 767px) {
+  font-weight: var(--heading-weight, 700);
+  @media screen and (max-width: 767px) {
     font-size: calc( calc(var(--font-size) * var(--heading-ratio, 2)) * 0.75);
   }
 }
