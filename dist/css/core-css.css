@@ -1107,7 +1107,7 @@ html.is-overflow body {
   grid-column-gap: 0;
   grid-row-gap: 0;
   grid-template-columns: minmax(var(--layout-side-padding), 1fr) repeat(var(--layout-cell-count), minmax(0, var(--layout-cell-width))) minmax(var(--layout-side-padding), 1fr);
-  grid-template-areas: "header header" "sidebar main" "footer footer";
+  grid-template-areas: "header header" "sidebar main" "footer footer";
   grid-template-rows: minmax(auto, max-content) auto minmax(auto, max-content);
   /*
   &_fixed {
@@ -1216,7 +1216,7 @@ html.is-overflow body {
 
 @media (max-width: 767px) {
   .page_layout {
-    grid-template-areas: "header" "sidebar" "main" "footer";
+    grid-template-areas: "header" "sidebar" "main" "footer";
     grid-template-columns: 100%;
     grid-template-rows: max-content;
   }
@@ -1264,13 +1264,13 @@ html.is-overflow body {
 }
 
 .page_layout_section_top {
-  grid-template-areas: "header header header header" "section-top section-top section-top section-top" ". sidebar main ." "footer footer footer footer";
+  grid-template-areas: "header header header header" "section-top section-top section-top section-top" ". sidebar main ." "footer footer footer footer";
   grid-template-rows: minmax(auto, max-content) minmax(auto, max-content) auto minmax(auto, max-content);
 }
 
 @media (max-width: 767px) {
   .page_layout_section_top {
-    grid-template-areas: "header" "section-top" "sidebar" "main" "footer";
+    grid-template-areas: "header" "section-top" "sidebar" "main" "footer";
     grid-template-columns: 100%;
     grid-template-rows: max-content;
   }
@@ -1383,6 +1383,10 @@ html.is-overflow body {
 .page_layout-clear header, .page_layout-clear main, .page_layout-clear aside, .page_layout-clear footer {
   grid-column: auto;
   max-width: 100%;
+}
+
+.page_layout-clear aside {
+  display: none;
 }
 
 .page_layout-clear.page_layout_section_top {

@@ -1,9 +1,9 @@
 html {
  &.is-overflow {
   overflow: hidden;
-  
+
     body {
-      overflow: hidden;  
+      overflow: hidden;
     }
   }
 }
@@ -59,7 +59,7 @@ html {
     grid-area: footer;
     grid-column: 1 / -1;
   }
-  
+
   & > .page_section_top {
     grid-area: section-top;
     grid-column: 1 / -1;
@@ -118,7 +118,7 @@ html {
         }
 
       }
-      
+
       & > aside {
         grid-column-end: var(--layout-cell-main);
         grid-column-start: calc(calc(var(--initial-sidebar-end) - var(--layout-cell-main) - 2) * -1);
@@ -166,7 +166,7 @@ html {
             flex: 0 1 auto;
           }
 
-          & > [data-sidebar] { 
+          & > [data-sidebar] {
             top: auto;
             bottom: var(--fixed-panels-bottom-offset, 0);
           }
@@ -292,6 +292,10 @@ html {
     header, main, aside, footer {
       grid-column: auto;
       max-width: 100%;
+    }
+
+    aside {
+      display: none;
     }
 
     &.page_layout_section_top {
