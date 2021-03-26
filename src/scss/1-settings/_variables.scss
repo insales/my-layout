@@ -61,7 +61,7 @@
   --layout-side-padding-mobile: 15px;
   --layout-adaptive-vertical-indents-factor-decrease: 4;
 
-  /***** page *****/
+  /***** PAGE LAYOUT *****/
   --layout-cell-count: 36;
   --layout-cell-main: 38;
   --layout-cell-width: calc(var(--layout-content-max-width) / var(--layout-cell-count));
@@ -71,6 +71,7 @@
   --initial-main-start: var(--initial-sidebar-end, 7);
   --initial-main-end: var(--theme-main-end, var(--layout-cell-main));
   --fixed-sidebar-color: var(--theme-fixed-sidebar-color, '#fff');
+  --sticky-sidebar-offset: 10px;
   --initial-fixed-sidebar-end: calc(var(--theme-sidebar-fixed-end, 3) + var(--layout-delta));
   --initial-fixed-main-end: calc(var(--theme-sidebar-fixed-end, 3) + var(--layout-delta));
 

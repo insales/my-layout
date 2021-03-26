@@ -146,7 +146,7 @@ html {
       & > aside {
         & > [data-sidebar] {
           position: sticky;
-          top:var(--fixed-panels-top-offset, 0);
+          top: calc(var(--sticky-sidebar-offset, 10px) + var(--fixed-panels-top-offset, 0));
           z-index: var(--zindex-sticky);
         }
 
@@ -168,7 +168,7 @@ html {
 
           & > [data-sidebar] {
             top: auto;
-            bottom: var(--fixed-panels-bottom-offset, 0);
+            bottom: calc(var(--sticky-sidebar-offset, 10px) + var(--fixed-panels-bottom-offset, 0));
           }
         }
       }

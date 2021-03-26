@@ -59,7 +59,7 @@
   --layout-side-padding: 40px;
   --layout-side-padding-mobile: 15px;
   --layout-adaptive-vertical-indents-factor-decrease: 4;
-  /***** page *****/
+  /***** PAGE LAYOUT *****/
   --layout-cell-count: 36;
   --layout-cell-main: 38;
   --layout-cell-width: calc(var(--layout-content-max-width) / var(--layout-cell-count));
@@ -69,6 +69,7 @@
   --initial-main-start: var(--initial-sidebar-end, 7);
   --initial-main-end: var(--theme-main-end, var(--layout-cell-main));
   --fixed-sidebar-color: var(--theme-fixed-sidebar-color, '#fff');
+  --sticky-sidebar-offset: 10px;
   --initial-fixed-sidebar-end: calc(var(--theme-sidebar-fixed-end, 3) + var(--layout-delta));
   --initial-fixed-main-end: calc(var(--theme-sidebar-fixed-end, 3) + var(--layout-delta));
   /* Controls - Кнопки, элементы формы - input, textarea, select.
@@ -1344,7 +1345,7 @@ html.is-overflow body {
 
 .page_layout_sticky_left > aside > [data-sidebar], .page_layout_sticky_right > aside > [data-sidebar] {
   position: sticky;
-  top: var(--fixed-panels-top-offset, 0);
+  top: calc(var(--sticky-sidebar-offset, 10px) + var(--fixed-panels-top-offset, 0));
   z-index: var(--zindex-sticky);
 }
 
@@ -1367,7 +1368,7 @@ html.is-overflow body {
 
 .page_layout_sticky_left > aside.is-large > [data-sidebar], .page_layout_sticky_right > aside.is-large > [data-sidebar] {
   top: auto;
-  bottom: var(--fixed-panels-bottom-offset, 0);
+  bottom: calc(var(--sticky-sidebar-offset, 10px) + var(--fixed-panels-bottom-offset, 0));
 }
 
 .page_layout-clear {
