@@ -703,6 +703,13 @@ div.co-input-select:after {
   transform: translate(-50%, -50%);
 }
 
+.co-input--file_selected .co-input-file_name_wrapper {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .m-modal-close {
   background: none;
   outline: none;
@@ -739,6 +746,10 @@ div.co-input-select:after {
   .m-modal#insales-quick-checkout-dialog {
     max-height: calc(100vh - 60px);
   }
+}
+
+.co-basket_item-description {
+  min-width: 0;
 }
 
 .static-text .insales-rich-editable {
