@@ -27,7 +27,7 @@ body {
   background: var(--bg);
 }
 
-[style*="--bg-is-dark:true"], [style*="--bg-is-light:false"]  {
+[style*="--bg-is-dark:true"], [style*="--bg-is-light:false"], [style*="--bg-is-dark: true"], [style*="--bg-is-light: false"]  {
   color: var(--color-text-light);
   --color-text: var(--color-text-light);
   --color-text-minor-shade: var(--color-text-light-minor-shade);
@@ -35,7 +35,7 @@ body {
   --color-text-half-shade: var(--color-text-light-half-shade);
 }
 
-[style*="--bg-is-light:true"], [style*="--bg-is-dark:false"] {
+[style*="--bg-is-light:true"], [style*="--bg-is-dark:false"], [style*="--bg-is-light: true"], [style*="--bg-is-dark: false"] {
   color: var(--color-text-dark);
   --color-text: var(--color-text-dark);
   --color-text-minor-shade: var(--color-text-dark-minor-shade);
