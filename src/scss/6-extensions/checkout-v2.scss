@@ -206,4 +206,10 @@ div.co-input-select:after {
 }
 .co-section--content_wrapper {
   max-width: 100%;
+  margin-left: calc(var(--layout-side-padding) * -1);
+  margin-right: calc(var(--layout-side-padding) * -1);
+}
+
+.checkout-v2-wrapper.co-section--content_wrapper {
+  max-width: none;
 }
