@@ -58,6 +58,12 @@ a {
   .co-tabs-node:not(.co-tabs-node--active) {
     background: var(--color-btn-bg-minor-shade);
   }
+
+  .co-tabs-node--active:hover {
+    background: var(--color-btn-bg);
+    color: var(--color-btn-color);
+    border-color: var(--color-btn-bg);
+  }
 }
 
 .co-order-state {
