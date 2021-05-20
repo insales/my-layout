@@ -614,6 +614,12 @@ a:focus {
   background: var(--color-btn-bg-minor-shade);
 }
 
+.co-tabs-controls--customer .co-tabs-node--active:hover {
+  background: var(--color-btn-bg);
+  color: var(--color-btn-color);
+  border-color: var(--color-btn-bg);
+}
+
 .co-order-state {
   border-radius: var(--controls-form-border-radius);
   display: inline-flex;
@@ -759,6 +765,12 @@ div.co-input-select:after {
 
 .co-section--content_wrapper {
   max-width: 100%;
+  margin-left: calc(var(--layout-side-padding) * -1);
+  margin-right: calc(var(--layout-side-padding) * -1);
+}
+
+.checkout-v2-wrapper.co-section--content_wrapper {
+  max-width: none;
 }
 
 .static-text .insales-rich-editable {
