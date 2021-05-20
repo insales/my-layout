@@ -624,6 +624,10 @@ a:focus {
   white-space: break-spaces;
 }
 
+.co-order-state + .co-button.co-button--small {
+  white-space: break-spaces;
+}
+
 /* Текстовые поля */
 .tt-dropdown-menu {
   color: var(--color-form-controls-color);
