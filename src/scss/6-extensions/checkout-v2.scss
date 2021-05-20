@@ -70,6 +70,10 @@ a {
   white-space: break-spaces;
 }
 
+.co-order-state + .co-button.co-button--small {
+  white-space: break-spaces;
+}
+
 /* Текстовые поля */
 .co-input-field,
 .m-input-field {
