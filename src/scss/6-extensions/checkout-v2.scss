@@ -65,8 +65,9 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: var(--controls-height-m);
-  padding: var(--controls-btn-padding-y) var(--controls-btn-padding-x);
+  min-height: var(--controls-height-m);
+  padding: 4px var(--controls-btn-padding-x);
+  white-space: break-spaces;
 }
 
 /* Текстовые поля */
