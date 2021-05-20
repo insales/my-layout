@@ -578,6 +578,10 @@ a:focus {
   color: var(--color-btn-bg);
 }
 
+.co-toggable_field-input--checkbox input + span:after {
+  line-height: 18px;
+}
+
 .co-form-controls .co-input-description a:not([class]), .co-input-description .co-form-controls a:not([class]),
 .co-form-controls .co-menu-link,
 .co-form-controls .co-link,
