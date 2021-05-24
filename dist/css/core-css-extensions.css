@@ -711,12 +711,20 @@ div.co-input-select:after {
 }
 
 .m-input--checkbox [type="checkbox"]:checked + span:after {
-  content: "✔";
+  content: "\E80F";
   left: 50%;
   top: 50%;
-  font-size: 1.3rem;
+  font-size: .8rem;
   position: absolute;
   transform: translate(-50%, -50%);
+  font-family: "insales-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
 
 .co-input--file_selected .co-input-file_name_wrapper {
