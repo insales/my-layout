@@ -126,6 +126,10 @@ div.co-input-select:after {
   line-height: normal;
 }
 
+.mobile .co-modal--pick_up_modal .pick-up-modal-tool-button, .mobile .co-modal--pick_up_modal .co-modal-switch, .mobile .co-modal--pick_up_modal .co-modal-select-point, .mobile .co-modal--pick_up_modal .co-modal-close {
+  align-items: center;
+}
+
 .co-pick_up-item, .co-modal--pick_up_modal {
   color: #000000;
 }
