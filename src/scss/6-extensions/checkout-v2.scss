@@ -166,7 +166,7 @@ div.co-input-select:after {
 }
 
 .m-input--checkbox [type="checkbox"]:checked + span:after {
-  content: "\E80F";
+  content: var(--icon-code-check);
   left: 50%;
   top: 50%;
   font-size: .8rem;
