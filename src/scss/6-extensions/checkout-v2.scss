@@ -229,10 +229,29 @@ div.co-input-select:after {
 }
 .co-section--content_wrapper {
   max-width: 100%;
-  margin-left: calc(var(--layout-side-padding) * -1);
-  margin-right: calc(var(--layout-side-padding) * -1);
+  @media (max-width: 767px) {
+    margin-left: calc(var(--layout-side-padding) * -1);
+    margin-right: calc(var(--layout-side-padding) * -1);
+  }
+}
+
+.co-section--checkout_content {
+  @media (max-width: 767px) {
+    margin: 0;
+  }
 }
 
 .checkout-v2-wrapper.co-section--content_wrapper {
   max-width: none;
+}
+
+.co-modal-login_form {
+  .co-button--password_recover {
+    margin: 0;
+  }
+}
+#quick_checkout_form {
+  .m-modal-errors {
+    color: #a94442;
+  }
 }
