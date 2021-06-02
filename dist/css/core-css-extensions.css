@@ -715,7 +715,7 @@ div.co-input-select:after {
 }
 
 .m-input--checkbox [type="checkbox"]:checked + span:after {
-  content: "\E80F";
+  content: var(--icon-code-check);
   left: 50%;
   top: 50%;
   font-size: .8rem;
@@ -782,12 +782,31 @@ div.co-input-select:after {
 
 .co-section--content_wrapper {
   max-width: 100%;
-  margin-left: calc(var(--layout-side-padding) * -1);
-  margin-right: calc(var(--layout-side-padding) * -1);
+}
+
+@media (max-width: 767px) {
+  .co-section--content_wrapper {
+    margin-left: calc(var(--layout-side-padding) * -1);
+    margin-right: calc(var(--layout-side-padding) * -1);
+  }
+}
+
+@media (max-width: 767px) {
+  .co-section--checkout_content {
+    margin: 0;
+  }
 }
 
 .checkout-v2-wrapper.co-section--content_wrapper {
   max-width: none;
+}
+
+.co-modal-login_form .co-button--password_recover {
+  margin: 0;
+}
+
+#quick_checkout_form .m-modal-errors {
+  color: #a94442;
 }
 
 .static-text .insales-rich-editable {
