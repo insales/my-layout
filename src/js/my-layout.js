@@ -3,6 +3,14 @@ window.addEventListener("load", (event) => {
     let vh = window.innerHeight;
     document.querySelector('html').style.setProperty('--vh', `${vh}px`);
   }
+
+  if (typeof EventBus != 'undefined') {
+    EventBus.subscribe('errors:insales:quick_checkout', function () {
+      if ($('.m-modal-heading').length > 0) {
+        $('.m-modal-heading')[0].scrollIntoView({ block: "center", behavior: "smooth" });
+      }
+    });
+  }
   
   let setFixedPanelOffsetVariable = (panelPosition, value) => {
     let css_variable = '';
