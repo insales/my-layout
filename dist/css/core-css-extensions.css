@@ -31,14 +31,14 @@ a:not([href]):not([class]) {
   text-decoration: none;
 }
 
-[style*="--color-btn-bg-is-dark:true"], [style*="--color-btn-bg-is-light:false"] {
+[style*="--color-btn-bg-is-dark:true"], [style*="--color-btn-bg-is-light:false"], [style*="--color-btn-bg-is-dark: true"], [style*="--color-btn-bg-is-light: false"] {
   --color-btn-color: var(--color-text-light);
   --color-btn-color-minor-shade: var(--color-text-light-minor-shade);
   --color-btn-color-major-shade: var(--color-text-light-major-shade);
   --color-btn-color-half-shade: var(--color-text-light-half-shade);
 }
 
-[style*="--color-btn-bg-is-light:true"], [style*="--color-btn-bg-is-dark:false"] {
+[style*="--color-btn-bg-is-light:true"], [style*="--color-btn-bg-is-dark:false"], [style*="--color-btn-bg-is-light: true"], [style*="--color-btn-bg-is-dark: false"] {
   --color-btn-color: var(--color-text-dark);
   --color-btn-color-minor-shade: var(--color-text-dark-minor-shade);
   --color-btn-color-major-shade: var(--color-text-dark-major-shade);
