@@ -640,6 +640,11 @@ a:focus {
 }
 
 /* Текстовые поля */
+.co-input-field,
+.m-input-field {
+  border: var(--controls-border-width) solid var(--color-form-controls-color);
+}
+
 .tt-dropdown-menu {
   color: var(--color-form-controls-color);
   background: var(--color-form-controls-bg);

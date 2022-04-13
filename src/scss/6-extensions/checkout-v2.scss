@@ -89,6 +89,7 @@ a {
 .co-input-field,
 .m-input-field {
   @extend .form-control;
+  border: var(--controls-border-width) solid var(--color-form-controls-color);
 }
 
 .tt-dropdown-menu {
