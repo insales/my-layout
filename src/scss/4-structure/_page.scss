@@ -90,10 +90,13 @@ html {
       @media (min-width: 768px) {
         & > aside > .layout,
         & > aside > .editable-widget > .layout,
+        & > aside > .editable-widget > .editable-widget-inner > .layout,
         & > aside > [data-sidebar] > .layout,
         & > aside > [data-sidebar] .editable-widget > .layout,
+        & > aside > [data-sidebar] .editable-widget > .editable-widget-inner > .layout,
         & > main > .layout,
-        & > main .editable-widget > .layout {
+        & > main .editable-widget > .layout,
+        & > main .editable-widget > .editable-widget-inner > .layout {
           padding-left: 0;
           padding-right: 0;
         }
