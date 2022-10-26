@@ -9,7 +9,7 @@ html {
 }
 
 .page_layout {
-  min-height: calc(var(--vh, 100vh) - var(--fixed-panels-top-offset) - var(--fixed-panels-bottom-offset));
+  min-height: calc(var(--vh, 100vh) - var(--fixed-panels-top-offset) - var(--fixed-panels-bottom-offset) - var(--shop-insales-panel-height, 0px));
   display: grid;
   grid-column-gap: 0;
   grid-row-gap: 0;
@@ -149,7 +149,7 @@ html {
       & > aside {
         & > [data-sidebar] {
           position: sticky;
-          top: calc(var(--sticky-sidebar-offset, 10px) + var(--fixed-panels-top-offset, 0));
+          top: calc(var(--sticky-sidebar-offset, 10px) + var(--fixed-panels-top-offset));
           z-index: var(--zindex-sticky);
         }
 
@@ -286,8 +286,6 @@ html {
     display: grid;
     grid-column-gap: 1.5rem;
     grid-row-gap: 0;
-    min-height: 100vh;
-
     grid-template-columns: 100%;
     grid-template-rows: minmax(auto, max-content) auto minmax(auto, max-content);
     grid-template-areas: "header" "main" "footer";

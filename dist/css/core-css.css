@@ -112,8 +112,8 @@
   --btn-transition: color .15s ease-in-out, background .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   --input-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   /***** FIXED PANELS *****/
-  --fixed-panels-top-offset: 0;
-  --fixed-panels-bottom-offset: 0;
+  --fixed-panels-top-offset: 0px;
+  --fixed-panels-bottom-offset: 0px;
   /***** COMPONENT GRID-LIST *****/
   --grid-list-min-width: 300px;
   --grid-list-row-gap: 3rem;
@@ -1103,7 +1103,7 @@ html.is-overflow body {
 }
 
 .page_layout {
-  min-height: calc(var(--vh, 100vh) - var(--fixed-panels-top-offset) - var(--fixed-panels-bottom-offset));
+  min-height: calc(var(--vh, 100vh) - var(--fixed-panels-top-offset) - var(--fixed-panels-bottom-offset) - var(--shop-insales-panel-height, 0px));
   display: grid;
   grid-column-gap: 0;
   grid-row-gap: 0;
@@ -1357,7 +1357,7 @@ html.is-overflow body {
 
 .page_layout_sticky_left > aside > [data-sidebar], .page_layout_sticky_right > aside > [data-sidebar] {
   position: sticky;
-  top: calc(var(--sticky-sidebar-offset, 10px) + var(--fixed-panels-top-offset, 0));
+  top: calc(var(--sticky-sidebar-offset, 10px) + var(--fixed-panels-top-offset));
   z-index: var(--zindex-sticky);
 }
 
@@ -1387,7 +1387,6 @@ html.is-overflow body {
   display: grid;
   grid-column-gap: 1.5rem;
   grid-row-gap: 0;
-  min-height: 100vh;
   grid-template-columns: 100%;
   grid-template-rows: minmax(auto, max-content) auto minmax(auto, max-content);
   grid-template-areas: "header" "main" "footer";
