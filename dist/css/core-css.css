@@ -1420,11 +1420,11 @@ body {
 }
 
 [data-fixed-panels="top"] {
-  top: 0;
+  top: var(--shop-insales-panel-height, 0);
 }
 
 [data-fixed-panels="bottom"] {
-  bottom: 0;
+  bottom: var(--shop-insales-panel-height, 0);
 }
 
 [data-fixed-panels].is-no-layouts {
