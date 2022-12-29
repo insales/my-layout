@@ -11,8 +11,7 @@ html {
 .page_layout {
   min-height: calc(var(--vh, 100vh) - var(--fixed-panels-top-offset) - var(--fixed-panels-bottom-offset) - var(--shop-insales-panel-height, 0px));
   display: grid;
-  grid-column-gap: 0;
-  grid-row-gap: 0;
+  grid-gap: 0;
   grid-template-columns: minmax(var(--layout-side-padding), 1fr) repeat(var(--layout-cell-count), minmax(0, var(--layout-cell-width))) minmax(var(--layout-side-padding), 1fr);
   grid-template-areas:
   "header header"
@@ -119,7 +118,6 @@ html {
         @media (max-width: 767px) {
           grid-column: 1 / -1;
         }
-
       }
 
       & > aside {
@@ -148,9 +146,12 @@ html {
     &_left, &_right {
       & > aside {
         & > [data-sidebar] {
-          position: sticky;
           top: calc(var(--sticky-sidebar-offset, 10px) + var(--fixed-panels-top-offset));
           z-index: var(--zindex-sticky);
+
+          @media (min-width: 768px) {
+            position: sticky;
+          }
         }
 
         &.is-large {
