@@ -148,7 +148,9 @@ html {
     &_left, &_right {
       & > aside {
         & > [data-sidebar] {
-          position: sticky;
+          @media (min-width: 768px) {
+            position: sticky;
+          }
           top: calc(var(--sticky-sidebar-offset, 10px) + var(--fixed-panels-top-offset));
           z-index: var(--zindex-sticky);
         }

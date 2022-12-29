@@ -1356,9 +1356,14 @@ html.is-overflow body {
 }
 
 .page_layout_sticky_left > aside > [data-sidebar], .page_layout_sticky_right > aside > [data-sidebar] {
-  position: sticky;
   top: calc(var(--sticky-sidebar-offset, 10px) + var(--fixed-panels-top-offset));
   z-index: var(--zindex-sticky);
+}
+
+@media (min-width: 768px) {
+  .page_layout_sticky_left > aside > [data-sidebar], .page_layout_sticky_right > aside > [data-sidebar] {
+    position: sticky;
+  }
 }
 
 .page_layout_sticky_left > aside.is-large, .page_layout_sticky_right > aside.is-large {
