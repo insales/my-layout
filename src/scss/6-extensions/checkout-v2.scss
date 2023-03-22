@@ -256,3 +256,11 @@ div.co-input-select:after {
     color: #a94442;
   }
 }
+.co-checkout-title, .co-title--h1 {
+  font-size: calc(var(--font-size) * var(--heading-ratio, 2));
+  font-weight: var(--heading-weight, 700);
+}
+.co-title--h2 {
+  font-size: calc(var(--font-size) * var(--heading-ratio) / 1.4);
+  font-weight: var(--heading-weight, 700);
+}
