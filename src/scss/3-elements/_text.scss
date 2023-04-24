@@ -4,7 +4,7 @@ p {
 }
 
 abbr[title],
-abbr[data-original-title] { 
+abbr[data-original-title] {
   text-decoration: underline;
   text-decoration: underline dotted;
   cursor: help;
@@ -58,7 +58,9 @@ dd {
 }
 
 blockquote {
-  margin: 0 0 1rem;
+  margin: 0 0 1rem 1rem;
+  border-left: 2px solid var(--color-border-block);
+  padding-left: 1rem;
 }
 
 b,
@@ -86,7 +88,7 @@ code,
 kbd,
 samp {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 1em; 
+  font-size: 1em;
 }
 
 pre {
