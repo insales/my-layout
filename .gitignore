@@ -4,9 +4,7 @@
 /dev/*.map
 /test
 /npm-debug.log
-package-lock.json
 lint-results.html
 test-report.html
 .idea
-/yarn.lock
 .nmvrc
