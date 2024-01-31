@@ -11,7 +11,7 @@ window.addEventListener("load", (event) => {
       }
     });
   }
-  
+
   let setFixedPanelOffsetVariable = (panelPosition, value) => {
     let css_variable = '';
 
@@ -23,7 +23,7 @@ window.addEventListener("load", (event) => {
       css_variable = '--fixed-panels-bottom-offset';
     }
 
-    document.querySelector('html').style.setProperty(css_variable, `${value}px`); 
+    document.querySelector('html').style.setProperty(css_variable, `${value}px`);
   }
 
   let isEmptyFixedPanel = (panel) => {
@@ -35,13 +35,13 @@ window.addEventListener("load", (event) => {
     const aside_area = document.querySelector('.page_layout > aside');
     const sidebar = document.querySelector('[data-sidebar]');
     const fixed_panel_top = document.querySelector('[data-fixed-panels="top"]');
-    
+
     let height_fixed_top_panel = 0;
-    
+
     if (fixed_panel_top) {
       height_fixed_top_panel = fixed_panel_top.offsetHeight;
     }
-    
+
     if (sidebar.offsetHeight > (document.documentElement.clientHeight - height_fixed_top_panel)) {
       aside_area.classList.add('is-large');
     }
@@ -57,20 +57,20 @@ window.addEventListener("load", (event) => {
   const sidebar = document.querySelector('[data-sidebar]');
 
   if (fixed_panels.length > 0) {
-    fixed_panels.forEach(panel => { 
+    fixed_panels.forEach(panel => {
       if (isEmptyFixedPanel(panel)) {
         panel.classList.add('is-no-layouts');
       }
       else {
         setFixedPanelOffsetVariable(panel.dataset.fixedPanels, panel.offsetHeight);
       }
-      
+
       if (window.ResizeObserver) {
         let fixedPanelsObserver = new ResizeObserver(entries => {
-          entries.forEach(entry => { 
+          entries.forEach(entry => {
             const height = Math.floor(entry.contentRect.height);
             const position = entry.target.dataset.fixedPanels;
-            
+
             if (isEmptyFixedPanel(entry.target)) {
               entry.target.classList.add('is-no-layouts');
               setFixedPanelOffsetVariable(position, 0);
@@ -78,14 +78,14 @@ window.addEventListener("load", (event) => {
               entry.target.classList.remove('is-no-layouts');
               setFixedPanelOffsetVariable(position, height);
             }
-            
+
             if (sidebar) {
               checkSidebarHeigth();
             }
           });
         });
 
-        fixedPanelsObserver.observe(panel); 
+        fixedPanelsObserver.observe(panel);
       }
     });
   }
@@ -102,4 +102,6 @@ window.addEventListener("load", (event) => {
       sidebarObserver.observe(sidebar);
     }
   }
+
+  document.body.classList.add('settings_loaded');
 });
