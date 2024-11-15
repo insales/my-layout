@@ -29,6 +29,11 @@ html {
     grid-template-rows: max-content;
   }
 
+  .editable-widget.show-notification-empty .layout__content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   & > header {
     grid-area: header;
     grid-column: 1 / -1;
