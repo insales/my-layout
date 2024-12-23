@@ -12,12 +12,6 @@ export default {
   entry: {
     'core-css': {
       import: path.resolve(__dirname, '../src/styles/core-css.scss')
-    },
-    'core-css-extensions': {
-      import: path.resolve(__dirname, '../src/styles/core-css-extensions.scss')
-    },
-    'my-layout': {
-      import: path.resolve(__dirname, '../src/styles/my-layout.scss')
     }
   },
   module: {
