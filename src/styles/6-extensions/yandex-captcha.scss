@@ -1,4 +1,6 @@
 .SmartCaptcha-Shield {
+  z-index: 1;
+
   &_position_right.SmartCaptcha-Shield_visible {
     transform: translateX(-100px) !important;
   }
