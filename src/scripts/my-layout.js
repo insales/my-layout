@@ -31,22 +31,23 @@ window.addEventListener("load", (event) => {
     return (layouts.length == 0) ? true : false;
   }
 
-  let checkSidebarHeigth = () => {
-    const aside_area = document.querySelector('.page_layout > aside');
+  function checkSidebarHeight() {
+    const asideArea = document.querySelector('.page_layout > aside');
     const sidebar = document.querySelector('[data-sidebar]');
-    const fixed_panel_top = document.querySelector('[data-fixed-panels="top"]');
+    const fixedPanelTop = document.querySelector('[data-fixed-panels="top"]');
 
-    let height_fixed_top_panel = 0;
-
-    if (fixed_panel_top) {
-      height_fixed_top_panel = fixed_panel_top.offsetHeight;
+    if (!asideArea) {
+      return;
     }
 
-    if (sidebar.offsetHeight > (document.documentElement.clientHeight - height_fixed_top_panel)) {
-      aside_area.classList.add('is-large');
-    }
-    else {
-      aside_area.classList.remove('is-large');
+    const heightFixedTopPanel = fixedPanelTop ? fixedPanelTop.offsetHeight : 0;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const sidebarHeight = sidebar?.offsetHeight;
+
+    if (sidebarHeight > viewportHeight - heightFixedTopPanel) {
+      asideArea.classList.add('is-large');
+    } else {
+      asideArea.classList.remove('is-large');
     }
   }
 
@@ -80,7 +81,7 @@ window.addEventListener("load", (event) => {
             }
 
             if (sidebar) {
-              checkSidebarHeigth();
+              checkSidebarHeight();
             }
           });
         });
@@ -91,12 +92,12 @@ window.addEventListener("load", (event) => {
   }
 
   if (sidebar) {
-    checkSidebarHeigth();
-    window.addEventListener('resize', checkSidebarHeigth);
+    checkSidebarHeight();
+    window.addEventListener('resize', checkSidebarHeight);
 
     if (window.ResizeObserver) {
       let sidebarObserver = new ResizeObserver(entries => {
-        checkSidebarHeigth();
+        checkSidebarHeight();
       });
 
       sidebarObserver.observe(sidebar);
