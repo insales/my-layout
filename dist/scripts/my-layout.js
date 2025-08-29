@@ -31,7 +31,7 @@ window.addEventListener("load", (event) => {
     return (layouts.length == 0) ? true : false;
   }
 
-  function checkSidebarHeight() {
+  let checkSidebarHeight = () => {
     const asideArea = document.querySelector('.page_layout > aside');
     const sidebar = document.querySelector('[data-sidebar]');
     const fixedPanelTop = document.querySelector('[data-fixed-panels="top"]');
