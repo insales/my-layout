@@ -167,7 +167,7 @@ div.co-input-select:after {
 }
 
 .m-input--checkbox [type="checkbox"]:checked + span:after {
-  content: var(--icon-code-check,  var(--icon-check));
+  content: var(--icon-code-check,  var(--icon-check, '✓'));
   left: 50%;
   top: 50%;
   font-size: .8rem;
