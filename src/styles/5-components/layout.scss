@@ -59,8 +59,8 @@
 
   .layout__content{
     @media screen and (max-width: 767px) {
-      padding-top: calc(var(--layout-pt) * var(--layout-adaptive-vertical-indents-factor-decrease));
-      padding-bottom: calc(var(--layout-pb) * var(--layout-adaptive-vertical-indents-factor-decrease));
+      padding-top: var(--layout-pt-mobile-px, var(--layout-pt-desktop-px, calc(var(--layout-pt) * var(--layout-adaptive-vertical-indents-factor-decrease))));
+      padding-bottom: var(--layout-pb-mobile-px, var(--layout-pb-desktop-px, calc(var(--layout-pb) * var(--layout-adaptive-vertical-indents-factor-decrease))));
     }
   }
 
@@ -81,8 +81,8 @@
   &__content {
     max-width: var(--layout-content-max-width);
     margin: 0 auto;
-    padding-top: var(--layout-pt);
-    padding-bottom: var(--layout-pb);
+    padding-top: var(--layout-pt-desktop-px, var(--layout-pt));
+    padding-bottom: var(--layout-pb-desktop-px, var(--layout-pb));
     background: var(--bg);
   }
 }
