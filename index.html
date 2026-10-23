@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Живые примеры my-layout: адаптивные секции, сетки, изображения и формы. Настройте CSS-переменные и скопируйте готовый код.">
+  <meta name="theme-color" content="#16181b">
+  <title>my-layout — примеры и playground</title>
+  <link rel="icon" href="playground/favicon.svg" type="image/svg+xml">
+  <script src="playground/appearance.js"></script>
+  <link rel="stylesheet" href="playground/playground.css">
+  <link rel="stylesheet" href="playground/signal.css">
+  <script type="module" src="playground/playground.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#examples">К примерам</a>
+  <header class="site-header shell">
+    <a class="wordmark" href="./" aria-label="my-layout, главная"><span class="brand-mark" aria-hidden="true">[m/l]</span>my-layout<span class="wordmark-label">CSS / playground</span></a>
+    <nav aria-label="Основная навигация">
+      <a href="#examples">Примеры</a><a href="#quick-start">Подключение</a>
+      <a class="github-link" href="https://github.com/insales/my-layout" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <div class="theme-bar shell" aria-label="Оформление">
+    <div class="theme-picker" role="group" aria-label="Цветовая тема">
+      <button type="button" data-theme-choice="light" aria-pressed="false"><span aria-hidden="true">◐</span> Светлая</button>
+      <button type="button" data-theme-choice="dark" aria-pressed="true"><span aria-hidden="true">●</span> Тёмная</button>
+    </div>
+  </div>
+  <main class="shell">
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="status-dot"></span>ML—01 / INTERFACE CONSTRUCTION KIT</p>
+        <h1 id="intro-title">LAYOUT<span class="signal-slash">/</span>LAB<span class="signal-dot" aria-hidden="true">®</span></h1>
+        <p class="intro-text">Секции. Сетки. Управление пространством.<br>Шесть модулей — одна система.</p>
+      </div>
+      <div class="intro-aside">
+        <div class="specimen-mark" aria-hidden="true">▦</div>
+        <dl class="intro-specs"><div><dt>Основа</dt><dd>CSS-переменные</dd></div><div><dt>Адаптив</dt><dd>767 / 768 px</dd></div><div><dt>Зависимости примеров</dt><dd>Без фреймворков</dd></div></dl>
+        <p class="design-reference"><span>Визуальный ориентир</span><a href="https://teenage.engineering/designs" target="_blank" rel="noopener">teenage engineering ↗</a></p>
+      </div>
+    </section>
+
+    <section id="examples" class="examples" aria-labelledby="examples-title">
+      <div class="section-heading"><div><p class="eyebrow">EXAMPLES / 001—006</p><h2 id="examples-title">Компоненты и примеры</h2></div><span class="section-caption">06 примеров · живой предпросмотр</span></div>
+      <div class="playground-layout">
+        <aside class="example-sidebar">
+          <p class="sidebar-label">ПРИМЕРЫ</p>
+          <nav id="example-list" class="example-list" aria-label="Выбор примера"></nav>
+          <div class="sidebar-note"><span aria-hidden="true">↳</span><p>Каждый пример использует настоящие классы библиотеки.</p></div>
+          <a class="text-link" href="dist/styles/core-css.css" download>Скачать core-css.css <span aria-hidden="true">↓</span></a>
+        </aside>
+        <div class="workspace">
+          <div class="example-heading"><div><h3 id="example-title">Каталог товаров</h3><p id="example-description"></p></div><button class="icon-button" id="share-example" type="button" title="Скопировать ссылку на настройки" aria-label="Скопировать ссылку на настройки">↗</button></div>
+          <div id="example-tags" class="code-tags"></div>
+          <div class="editor-layout">
+            <div class="preview-panel">
+              <div class="preview-toolbar">
+                <div class="view-tabs" role="tablist" aria-label="Вид примера"><button type="button" role="tab" id="tab-preview" aria-controls="panel-preview" aria-selected="true" data-view="preview">Результат</button><button type="button" role="tab" id="tab-html" aria-controls="panel-html" aria-selected="false" tabindex="-1" data-view="html">HTML</button><button type="button" role="tab" id="tab-css" aria-controls="panel-css" aria-selected="false" tabindex="-1" data-view="css">CSS примера</button></div>
+                <div class="device-switch" role="group" aria-label="Ширина предпросмотра"><button type="button" data-viewport="fluid" aria-pressed="true" title="По ширине области">Авто</button><button type="button" data-viewport="768" aria-pressed="false" title="Планшет, 768 пикселей">768</button><button type="button" data-viewport="390" aria-pressed="false" title="Телефон, 390 пикселей">390</button></div>
+              </div>
+              <div id="panel-preview" role="tabpanel" aria-labelledby="tab-preview"><div class="preview-stage" id="preview-stage"><div class="preview-canvas" id="preview-canvas"><iframe id="preview-frame" title="Живой пример my-layout"></iframe></div></div></div>
+              <div id="panel-html" class="code-panel" role="tabpanel" aria-labelledby="tab-html" hidden><div class="code-caption">HTML с текущими настройками <button class="small-button" type="button" data-copy="html">Скопировать</button></div><pre tabindex="0"><code id="html-code"></code></pre></div>
+              <div id="panel-css" class="code-panel" role="tabpanel" aria-labelledby="tab-css" hidden><div class="code-caption">Оформление примера поверх core-css.css <button class="small-button" type="button" data-copy="css">Скопировать</button></div><pre tabindex="0"><code id="css-code"></code></pre></div>
+              <div class="preview-footer"><span><span class="status-dot"></span> <span id="viewport-label">Адаптивный предпросмотр</span></span><span>media query · viewport</span></div>
+            </div>
+            <aside class="settings-panel" aria-label="Настройки примера">
+              <div class="settings-heading"><h4>Настройки секции</h4><button type="button" id="reset-settings" class="subtle-button">Сбросить</button></div>
+              <div class="settings-group"><span class="control-label">Фон секции</span><div class="color-controls"><div class="swatches" role="group" aria-label="Цвет фона"><button type="button" data-color="#f0f3ec" style="--swatch:#f0f3ec" aria-label="Шалфей"></button><button type="button" data-color="#f5eee4" style="--swatch:#f5eee4" aria-label="Песочный"></button><button type="button" data-color="#193d35" style="--swatch:#193d35" aria-label="Тёмно-зелёный"></button><button type="button" data-color="#ffffff" style="--swatch:#ffffff" aria-label="Белый"></button></div><label class="custom-color"><input type="color" id="background-color" aria-label="Свой цвет фона"><span id="color-value"></span></label></div></div>
+              <div class="settings-group"><label class="control-label" for="content-width">Ширина контента <output for="content-width" id="content-width-value"></output></label><input type="range" id="content-width" data-setting="width" min="320" max="1200" step="20"></div>
+              <fieldset class="settings-group"><legend>Отступы · десктоп</legend><label class="control-label" for="padding-top">Сверху <output for="padding-top" id="padding-top-value"></output></label><input type="range" id="padding-top" data-setting="top" min="0" max="120" step="4"><label class="control-label" for="padding-bottom">Снизу <output for="padding-bottom" id="padding-bottom-value"></output></label><input type="range" id="padding-bottom" data-setting="bottom" min="0" max="120" step="4"></fieldset>
+              <details class="settings-group mobile-settings"><summary>Отступы · мобильный <span>до 767 px</span></summary><label class="control-label" for="mobile-top">Сверху <output for="mobile-top" id="mobile-top-value"></output></label><input type="range" id="mobile-top" data-setting="mobileTop" min="0" max="80" step="4"><label class="control-label" for="mobile-bottom">Снизу <output for="mobile-bottom" id="mobile-bottom-value"></output></label><input type="range" id="mobile-bottom" data-setting="mobileBottom" min="0" max="80" step="4"></details>
+              <div class="settings-group toggle-group"><label class="toggle"><span>Фон на всю ширину</span><input type="checkbox" data-setting="wideBg"><span class="toggle-track" aria-hidden="true"></span></label><label class="toggle"><span>Растянуть контент</span><input type="checkbox" data-setting="wideContent"><span class="toggle-track" aria-hidden="true"></span></label><label class="toggle"><span>Без отступов по краям</span><input type="checkbox" data-setting="edge"><span class="toggle-track" aria-hidden="true"></span></label></div>
+              <div class="settings-group" id="grid-settings"><label class="control-label" for="grid-width">Мин. ширина карточки <output for="grid-width" id="grid-width-value"></output></label><input type="range" id="grid-width" data-setting="cardWidth" min="160" max="400" step="10"><label class="control-label" for="grid-gap">Расстояние в сетке <output for="grid-gap" id="grid-gap-value"></output></label><input type="range" id="grid-gap" data-setting="gap" min="0" max="48" step="2"></div>
+              <button type="button" class="primary-button" data-copy="html">Скопировать HTML <span aria-hidden="true">↗</span></button>
+              <p class="settings-hint">Для такого же результата подключите CSS примера из соседней вкладки.</p>
+            </aside>
+          </div>
+          <p class="example-tip" id="example-tip"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-start" id="quick-start" aria-labelledby="start-title">
+      <div class="start-heading"><p class="eyebrow">QUICK START / 01</p><h2 id="start-title">Начните с одной секции</h2><p>Подключите библиотеку, добавьте обёртку и настройте её через CSS-переменные.</p><a class="text-link" href="https://github.com/insales/my-layout#readme" target="_blank" rel="noopener">README на GitHub ↗</a></div>
+      <div class="start-code"><div class="code-caption"><span>index.html</span><button class="small-button" type="button" data-copy="starter">Скопировать</button></div><pre tabindex="0"><code id="starter-code"></code></pre></div>
+    </section>
+    <section class="reference" aria-labelledby="reference-title"><div class="section-heading"><h2 id="reference-title">Состав библиотеки</h2><span class="section-caption">Классы и их назначение.</span></div><div class="reference-grid"><article><span>01 / СТРУКТУРА</span><h3><code>.layout</code></h3><p>Ширина контента, фон и независимые отступы для десктопа и мобильного.</p></article><article><span>02 / СЕТКА</span><h3><code>.grid-list</code></h3><p>Карточки сами переносятся на новую строку. Задайте минимальную ширину и расстояния.</p></article><article><span>03 / МЕДИА</span><h3><code>.img-ratio</code></h3><p>Одинаковые пропорции изображений с режимами cover и contain.</p></article><article><span>04 / ЭЛЕМЕНТЫ</span><h3><code>.button · .form-control</code></h3><p>Кнопки, поля и состояния формы, которые можно оформить под свою витрину.</p></article></div></section>
+  </main>
+  <footer class="site-footer shell"><a class="wordmark" href="./">my-layout</a><span>CSS-библиотека / открытый исходный код</span><a href="https://github.com/insales/my-layout" target="_blank" rel="noopener">Сделано в InSales ↗</a></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">Для настройки примеров включите JavaScript. <a href="playground/preview.html">Открыть пример каталога</a>.</p></noscript>
+</body>
+</html>
